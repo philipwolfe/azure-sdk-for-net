@@ -16,6 +16,7 @@ namespace Azure.Identity
     /// types if enabled will be tried, in order:
     /// <list type="bullet">
     /// <item><description><see cref="EnvironmentCredential"/></description></item>
+    /// <item><description><see cref="AccessTokenCredential"/></description></item>
     /// <item><description><see cref="ManagedIdentityCredential"/></description></item>
     /// <item><description><see cref="SharedTokenCacheCredential"/></description></item>
     /// <item><description><see cref="VisualStudioCredential"/></description></item>
@@ -191,11 +192,16 @@ namespace Azure.Identity
             }
 
             int i = 0;
-            TokenCredential[] chain = new TokenCredential[8];
+            TokenCredential[] chain = new TokenCredential[9];
 
             if (!options.ExcludeEnvironmentCredential)
             {
                 chain[i++] = factory.CreateEnvironmentCredential();
+            }
+
+            if (!options.ExcludeAccessTokenCredential)
+            {
+                chain[i++] = factory.CreateAccessTokenCredential();
             }
 
             if (!options.ExcludeManagedIdentityCredential)

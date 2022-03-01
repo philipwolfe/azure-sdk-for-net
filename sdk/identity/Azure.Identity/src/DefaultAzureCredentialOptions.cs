@@ -117,5 +117,10 @@ namespace Azure.Identity
         /// Specifies whether the <see cref="AzurePowerShellCredential"/> will be excluded from the <see cref="DefaultAzureCredential"/> authentication flow.
         /// </summary>
         public bool ExcludeAzurePowerShellCredential { get; set; }
+
+        /// <summary>
+        /// Specifies whether the <see cref="AccessTokenCredential"/> will be excluded from the <see cref="DefaultAzureCredential"/> authentication flow.
+        /// </summary>
+        public bool ExcludeAccessTokenCredential { get; internal set; }
     }
 }

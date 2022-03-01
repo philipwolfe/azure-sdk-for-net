@@ -71,5 +71,10 @@ namespace Azure.Identity
         {
             return new AzurePowerShellCredential(new AzurePowerShellCredentialOptions(), Pipeline, default);
         }
+
+        public virtual TokenCredential CreateAccessTokenCredential()
+        {
+            return new AccessTokenCredential(Pipeline);
+        }
     }
 }

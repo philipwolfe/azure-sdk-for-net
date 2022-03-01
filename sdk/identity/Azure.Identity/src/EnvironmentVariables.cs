@@ -32,5 +32,8 @@ namespace Azure.Identity
         public static string AzureRegionalAuthorityName => Environment.GetEnvironmentVariable("AZURE_REGIONAL_AUTHORITY_NAME");
 
         public static string AzureFederatedTokenFile => Environment.GetEnvironmentVariable("AZURE_FEDERATED_TOKEN_FILE");
+
+        public static string AccessToken => Environment.GetEnvironmentVariable("AZURE_ACCESS_TOKEN");
+        public static string AccessTokenExpiresOn => Environment.GetEnvironmentVariable("AZURE_ACCESS_TOKEN_EXPIRESON");
     }
 }
